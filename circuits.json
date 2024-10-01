@@ -1,0 +1,6 @@
+{
+  "location": {
+    "file": "location",
+    "template": "LocationChecker"
+  }
+}

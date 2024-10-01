@@ -1,0 +1,5 @@
+*
+!.gitignore
+
+# Ignore all files except sample wanaka_tree
+!wanaka_tree*

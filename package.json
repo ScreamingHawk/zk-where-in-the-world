@@ -1,0 +1,24 @@
+{
+  "name": "zk-where-in-the-world",
+  "module": "index.ts",
+  "type": "module",
+	"scripts": {
+		"compile": "circomkit compile location",
+		"info": "circomkit info location",
+		"setup": "circomkit setup location",
+		"prove": "circomkit prove location",
+		"verify": "circomkit verify location",
+		"solidity": "circomkit contract location",
+		"calldata": "circomkit calldata location"
+	},
+  "devDependencies": {
+    "circomkit": "^0.3.0",
+    "snarkjs": "^0.7.4"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "circomlib": "^2.0.5"
+  }
+}
