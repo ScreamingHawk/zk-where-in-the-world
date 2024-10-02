@@ -1,0 +1,2 @@
+LocationVerifierTest:test_InvalidProof(uint256[2],uint256[2][2],uint256[2],uint256[1]) (runs: 256, μ: 999788986, ~: 1040430153)
+LocationVerifierTest:test_ValidProof() (gas: 202579)
