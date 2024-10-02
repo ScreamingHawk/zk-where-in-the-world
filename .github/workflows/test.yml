@@ -1,0 +1,75 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+env:
+  FOUNDRY_PROFILE: ci
+
+jobs:
+  build-and-test:
+    strategy:
+      fail-fast: true
+
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+
+      - name: Install Bun
+        run: |
+          curl -fsSL https://bun.sh/install | bash
+          export BUN_INSTALL="$HOME/.bun"
+          export PATH="$BUN_INSTALL/bin:$PATH"
+
+      - name: Install Foundry
+        uses: foundry-rs/foundry-toolchain@v1
+        with:
+          version: nightly
+
+      - name: Show Forge version
+        run: |
+          forge --version
+
+      - name: Install bun dependencies
+        run: bun install
+        working-directory: ./packages/circuits
+
+      - name: Compile circuits
+        run: |
+          bun run compile
+          bun run setup
+          bun run info
+        working-directory: ./packages/circuits
+
+      - name: Compile proof
+        run: |
+          mkdir -p inputs/location
+          cat ../../images/wanaka_tree.json | jq -c .location | xargs -0 bun scripts/normalize_location.ts > inputs/location/wanaka_tree.json
+          bun run prove wanaka_tree
+          bun run verify wanaka_tree
+        working-directory: ./packages/circuits
+
+      - name: Compile circuit contract
+        run: |
+          bun run solidity
+        working-directory: ./packages/circuits
+
+      - name: Run Forge build
+        run: |
+          forge build --sizes
+        id: build
+
+      - name: Run Forge tests
+        run: |
+          forge test -vvv
+        id: test
