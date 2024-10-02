@@ -1,4 +1,9 @@
+# Circomkit
 node_modules/
 ptau/
 build/
 inputs/
+
+# Forge
+out/
+.env
