@@ -2,7 +2,7 @@
 pragma solidity ^0.8.27;
 
 import {SingletonDeployer, console} from "erc2470-libs/script/SingletonDeployer.s.sol";
-import {LocationVerifier} from "src/LocationVerifier.sol";
+import {LocationVerifier} from "../src/LocationVerifier.sol";
 
 contract Deploy is SingletonDeployer {
     function run() external {
