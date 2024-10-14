@@ -61,6 +61,12 @@ mkdir -p inputs/location
 cat ../../images/wanaka_tree.json | jq -c .location | xargs -0 bun scripts/normalize_location.ts > inputs/location/wanaka_tree.json
 ```
 
+Obtain the output hash of the location:
+
+```bash
+cat inputs/location/wanaka_tree.json | xargs -0 bun scripts/hash_location.ts
+```
+
 Calculate the witness and proof:
 
 ```bash
