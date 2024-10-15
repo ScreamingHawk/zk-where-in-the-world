@@ -1,3 +1,4 @@
 erc2470-libs/=lib/erc2470-libs/
 forge-std/=lib/forge-std/src/
 circuits/=../circuits/build/
+solady/=lib/solady/src/

@@ -67,6 +67,12 @@ Obtain the output hash of the location:
 cat inputs/location/wanaka_tree.json | xargs -0 bun scripts/hash_location.ts
 ```
 
+Add a nonce to the input JSON file:
+
+```bash
+json_data=$(<inputs/location/wanaka_tree.json) && echo "$json_data" | jq '. + {"nonce": 0}' > inputs/location/wanaka_tree.json
+```
+
 Calculate the witness and proof:
 
 ```bash

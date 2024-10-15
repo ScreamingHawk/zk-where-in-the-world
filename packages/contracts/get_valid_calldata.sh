@@ -9,4 +9,4 @@ calldata=$(bun circomkit calldata location wanaka_tree | \
   sed ':a;N;$!ba;s/\n/,/g;s/,,*/,/g;s/^,\|,$//g;s/[^xa-f0-9,]//g')
 
 # Use the formatted calldata for ABI encoding
-cast abi-encode "x(uint256[9])" "[$calldata]"
+cast abi-encode "x(uint256[10])" "[$calldata]"

@@ -27,8 +27,16 @@ forge snapshot
 
 ## Deployment
 
+Copy `.env.example` to `.env` and fill with your information:
+
+```
+cp .env.example .env
+```
+
+Note that `LOCATION_HASHES` is a comma-separated list of the output hashes of valid locations.
+
 Deploy the contract:
 
 ```bash
-forge script script/Deploy.s.sol:Deploy
+forge script script/Deploy.s.sol:Deploy --rpc-url <rpc_url> --broadcast
 ```

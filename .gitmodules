@@ -4,3 +4,6 @@
 [submodule "packages/contracts/lib/erc2470-libs"]
 	path = packages/contracts/lib/erc2470-libs
 	url = https://github.com/ScreamingHawk/erc2470-libs
+[submodule "packages/contracts/lib/solady"]
+	path = packages/contracts/lib/solady
+	url = https://github.com/Vectorized/solady
