@@ -1,21 +1,6 @@
-import { groth16, PublicSignals, type Groth16Proof } from "snarkjs";
 import { randomBytes } from "crypto";
-
-export type LocationData = {
-  latitude: number;
-  longitude: number;
-};
-
-const normalizeLocation = (location: LocationData) => {
-  const normalizedLatitude = Math.round(
-    (location.latitude + 90) * Math.pow(10, 4),
-  );
-  const normalizedLongitude = Math.round(
-    (location.longitude + 180) * Math.pow(10, 4),
-  );
-
-  return { latitude: normalizedLatitude, longitude: normalizedLongitude };
-};
+import { groth16, PublicSignals, type Groth16Proof } from "snarkjs";
+import { LocationData, normalizeLocation } from "./location";
 
 const generateNonce = (): string =>
   BigInt(Number.parseInt(randomBytes(2).toString("hex"), 16)).toString();

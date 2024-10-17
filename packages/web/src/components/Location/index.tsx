@@ -1,11 +1,8 @@
-import { Box, Image, Text, TextInput } from "@0xsequence/design-system";
-import { ChangeEvent, useEffect, useState } from "react";
-import {
-  generateProof,
-  LocationData,
-  ProofData,
-  signalToHex,
-} from "../../utils/circuit";
+import { Box, Image, Text } from "@0xsequence/design-system";
+import { useState } from "react";
+import { MapContainer, TileLayer } from "react-leaflet";
+import { ProofData, signalToHex } from "../../utils/circuit";
+import MarkerOnClick from "./MarkerOnClick";
 import SubmitProof from "./SubmitProof";
 
 type LocationProps = {
@@ -14,42 +11,27 @@ type LocationProps = {
 };
 
 const Location: React.FC<LocationProps> = (props) => {
-  const [latitude, setLatitude] = useState<number>();
-  const [longitude, setLongitude] = useState<number>();
-
   const [proofData, setProofData] = useState<ProofData>();
-
-  const proveLocation = async (location: LocationData) => {
-    const result = await generateProof(location);
-    setProofData(result);
-  };
-
-  useEffect(() => {
-    if (latitude === undefined || longitude === undefined) {
-      return;
-    }
-    proveLocation({ latitude, longitude });
-  }, [latitude, longitude]);
 
   return (
     <Box display="flex" flexDirection="column" gap="4">
-      <Image src={props.imageFilename} />
-      <TextInput
-        name="Latitude"
-        controls="Latitude"
-        numeric={true}
-        onChange={(e: ChangeEvent<HTMLInputElement>) => {
-          setLatitude(Number.parseFloat(e.target.value));
-        }}
+      <Image
+        src={props.imageFilename}
+        style={{ maxHeight: "50vh", objectFit: "contain" }}
       />
-      <TextInput
-        name="Longitude"
-        controls="Longitude"
-        numeric={true}
-        onChange={(e: ChangeEvent<HTMLInputElement>) =>
-          setLongitude(Number.parseFloat(e.target.value))
-        }
-      />
+      <div style={{ height: "50vh", width: "100%" }}>
+        <MapContainer
+          center={[-44.6986, 169.1174]}
+          zoom={13}
+          scrollWheelZoom={true}
+        >
+          <TileLayer
+            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          />
+          <MarkerOnClick setProofData={setProofData} />
+        </MapContainer>
+      </div>
       {proofData &&
         signalToHex(proofData.publicSignals[0]) == props.locationHash && (
           <Box display="flex" flexDirection="column" gap="4">

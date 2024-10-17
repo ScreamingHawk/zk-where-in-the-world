@@ -20,12 +20,14 @@
     "ethers": "6.13.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-leaflet": "^4.2.1",
     "react-router-dom": "^6.27.0",
     "snarkjs": "^0.7.4",
     "viem": "^2.19.4",
     "wagmi": "^2.12.5"
   },
   "devDependencies": {
+    "@types/leaflet": "^1.9.12",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "@types/snarkjs": "^0.7.8",

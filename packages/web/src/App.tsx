@@ -4,6 +4,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { createConfig, http, WagmiProvider } from "wagmi";
 import { Router } from "./Router";
 import { CHAINS, DEFAULT_CHAIN } from "./utils/constants";
+
 const queryClient = new QueryClient();
 
 const App = () => {
