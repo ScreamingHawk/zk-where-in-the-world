@@ -34,6 +34,11 @@ cp .env.example .env
 ```
 
 Note that `LOCATION_HASHES` is a comma-separated list of the output hashes of valid locations.
+You can get the output hashes by running:
+
+```bash
+cd ../circuits && bun run scripts/hash_locations.ts
+```
 
 Deploy the contract:
 

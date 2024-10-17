@@ -1,0 +1,13 @@
+{
+  "wanaka_tree": {
+    "location": {
+      "latitude": -44.698,
+      "longitude": 169.118
+    },
+    "metadata": {
+      "name": "That Wanaka Tree",
+      "image_source": "https://www.pexels.com/photo/a-lone-tree-in-the-middle-of-a-lake-with-mountains-in-the-background-27623981",
+      "image_citation": "Donovan Kelly"
+    }
+  }
+}

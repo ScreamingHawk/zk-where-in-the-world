@@ -8,20 +8,27 @@ This package relies on [Sequence Embedded Wallet](https://docs.sequence.xyz/solu
 
 Copy `.env.example` to `.env` and fill with your project information. To test things out, you can use the pre-provided keys in the `.env.example` file:
 
-```
+```bash
 cp .env.example .env
 ```
 
 Copy the images to the public folder:
 
-```
+```bash
 mkdir -p public/images/locations
 cp -r ../../images/*.jpg public/images/locations
 ```
 
+Copy the metadata to the public folder:
+
+```bash
+mkdir -p public/metadata
+cp -r ../circuits/metadata/*.json public/metadata
+```
+
 Copy circuit files to the public folder:
 
-```
+```bash
 mkdir -p public/circuits
 cp ../circuits/build/location/groth16_pkey.zkey public/circuits
 cp ../circuits/build/location/groth16_vkey.json public/circuits

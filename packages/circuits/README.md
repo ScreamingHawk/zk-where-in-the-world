@@ -44,33 +44,28 @@ Prepare the proving and verification keys:
 bun run setup
 ```
 
-## Calculate the Witness
+## Calculate and Validate the Witness
 
 When calculating the witness, you will need to provide the latitude and longitude of the location where the picture was taken.
 Because the circuit uses unsigned fixed point numbers, the latitude and longitude must be normalised as follows:
 
 ```js
-latitude = (latitude + 90) * 10^4
-longitude = (longitude + 180) * 10^4
+latitude = (latitude + 90) * 10**3
+longitude = (longitude + 180) * 10**3
 ```
 
-As an example, the `images` folder contains a JSON file with the latitude and longitude of the Wanaka Tree. Extract the normalised values to an input JSON file:
+As an example, the `images` folder at the root contains a JSON file with the latitude and longitude of [That Wanaka Tree](https://en.wikipedia.org/wiki/That_W%C4%81naka_Tree). Include your own locations here for bulk processing.
+
+Prepare the input JSON file:
 
 ```bash
-mkdir -p inputs/location
-cat ../../images/wanaka_tree.json | jq -c .location | xargs -0 bun scripts/normalize_location.ts > inputs/location/wanaka_tree.json
+bun scripts/prepare_locations.ts
 ```
 
-Obtain the output hash of the location:
+Obtain the output hashes of the locations:
 
 ```bash
-cat inputs/location/wanaka_tree.json | xargs -0 bun scripts/hash_location.ts
-```
-
-Add a nonce to the input JSON file:
-
-```bash
-json_data=$(<inputs/location/wanaka_tree.json) && echo "$json_data" | jq '. + {"nonce": 0}' > inputs/location/wanaka_tree.json
+bun scripts/hash_location.ts
 ```
 
 Calculate the witness and proof:
@@ -78,6 +73,8 @@ Calculate the witness and proof:
 ```bash
 bun run prove wanaka_tree
 ```
+
+Change the `wanaka_tree` argument to the name of the location you want to prove.
 
 Validate the proof:
 

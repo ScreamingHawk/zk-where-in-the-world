@@ -1,6 +1,6 @@
 import { useAccount, useReadContract } from "wagmi";
 
-import { Box, Button } from "@0xsequence/design-system";
+import { Box, Button, Text } from "@0xsequence/design-system";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { zeroAddress } from "viem";
@@ -53,7 +53,8 @@ const Play = () => {
             shape="square"
           />
         )}
-        {hasBalance && level < LOCATIONS.length - 1 && (
+        <Text>{hasBalance ? 'Found!': 'Not found'}</Text>
+        {level < LOCATIONS.length - 1 && (
           <Button
             onClick={() => setLevel(level + 1)}
             variant="primary"

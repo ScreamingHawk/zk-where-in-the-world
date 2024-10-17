@@ -21,8 +21,8 @@ const Location: React.FC<LocationProps> = (props) => {
       />
       <div style={{ height: "50vh", width: "100%" }}>
         <MapContainer
-          center={[-44.6986, 169.1174]}
-          zoom={13}
+          center={[0, 0]}
+          zoom={1}
           scrollWheelZoom={true}
         >
           <TileLayer
