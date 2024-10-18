@@ -1,0 +1,19 @@
+{
+  "name": "Buckingham Palace",
+  "description": "Proof I know where Buckingham Palace is.",
+  "image": "https://where-in-the-world.standen.link/images/locations/buckingham_palace.jpg",
+  "attributes": [
+    {
+      "trait_type": "name",
+      "value": "Buckingham Palace"
+    },
+    {
+      "trait_type": "image_source",
+      "value": "https://www.pexels.com/photo/close-up-of-gate-of-buckingham-palace-1560102"
+    },
+    {
+      "trait_type": "image_citation",
+      "value": "Roméo"
+    }
+  ]
+}

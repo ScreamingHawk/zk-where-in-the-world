@@ -25,6 +25,7 @@ const App = () => {
     defaultChainId: DEFAULT_CHAIN.id,
     appName: "Kit Starter",
     projectAccessKey,
+    isDev: false,
   });
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
