@@ -2,6 +2,8 @@
 
 A ZK circuit that let's you prove you know where in the world a picture was taken.
 
+[Check it out live here!](https://where-in-the-world.standen.link)
+
 ## How it works
 
 The game is simple: you are given a picture and a map of the world. You must click on the map where you think the picture was taken. If you are correct, you can claim a token.
