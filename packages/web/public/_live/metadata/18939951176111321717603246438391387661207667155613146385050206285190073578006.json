@@ -1,0 +1,19 @@
+{
+  "name": "That Wanaka Tree",
+  "description": "Proof I know where That Wanaka Tree is.",
+  "image": "https://where-in-the-world.standen.link/images/locations/wanaka_tree.jpg",
+  "attributes": [
+    {
+      "trait_type": "name",
+      "value": "That Wanaka Tree"
+    },
+    {
+      "trait_type": "image_source",
+      "value": "https://www.pexels.com/photo/a-lone-tree-in-the-middle-of-a-lake-with-mountains-in-the-background-27623981"
+    },
+    {
+      "trait_type": "image_citation",
+      "value": "Donovan Kelly"
+    }
+  ]
+}

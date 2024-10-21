@@ -1,0 +1,19 @@
+{
+  "name": "Eiffel Tower",
+  "description": "Proof I know where Eiffel Tower is.",
+  "image": "https://where-in-the-world.standen.link/images/locations/eiffel_tower.jpg",
+  "attributes": [
+    {
+      "trait_type": "name",
+      "value": "Eiffel Tower"
+    },
+    {
+      "trait_type": "image_source",
+      "value": "https://www.pexels.com/photo/eiffel-tower-paris-532826"
+    },
+    {
+      "trait_type": "image_citation",
+      "value": "Pixabay"
+    }
+  ]
+}

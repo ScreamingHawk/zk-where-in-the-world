@@ -1,0 +1,19 @@
+{
+  "name": "Mount Fuji",
+  "description": "Proof I know where Mount Fuji is.",
+  "image": "https://where-in-the-world.standen.link/images/locations/mount_fuji.jpg",
+  "attributes": [
+    {
+      "trait_type": "name",
+      "value": "Mount Fuji"
+    },
+    {
+      "trait_type": "image_source",
+      "value": "https://www.pexels.com/photo/mt-fuji-japan-1108701"
+    },
+    {
+      "trait_type": "image_citation",
+      "value": "Liger Pham"
+    }
+  ]
+}

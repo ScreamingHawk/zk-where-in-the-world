@@ -1,0 +1,19 @@
+{
+  "name": "Mont Saint Michel",
+  "description": "Proof I know where Mont Saint Michel is.",
+  "image": "https://where-in-the-world.standen.link/images/locations/mont_saint_michel.jpg",
+  "attributes": [
+    {
+      "trait_type": "name",
+      "value": "Mont Saint Michel"
+    },
+    {
+      "trait_type": "image_source",
+      "value": "https://www.pexels.com/photo/white-and-black-concrete-building-near-body-of-water-during-sunset-14117949/"
+    },
+    {
+      "trait_type": "image_citation",
+      "value": "Philippe Serrand"
+    }
+  ]
+}

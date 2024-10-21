@@ -1,0 +1,19 @@
+{
+  "name": "Sydney Opera House",
+  "description": "Proof I know where Sydney Opera House is.",
+  "image": "https://where-in-the-world.standen.link/images/locations/sydney_opera_house.jpg",
+  "attributes": [
+    {
+      "trait_type": "name",
+      "value": "Sydney Opera House"
+    },
+    {
+      "trait_type": "image_source",
+      "value": "https://www.pexels.com/photo/people-gathering-outside-sydney-opera-house-2845013"
+    },
+    {
+      "trait_type": "image_citation",
+      "value": "Brett Stone"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "name": "Mount Rushmore",
+  "description": "Proof I know where Mount Rushmore is.",
+  "image": "https://where-in-the-world.standen.link/images/locations/mount_rushmore.jpg",
+  "attributes": [
+    {
+      "trait_type": "name",
+      "value": "Mount Rushmore"
+    },
+    {
+      "trait_type": "image_source",
+      "value": "https://www.pexels.com/photo/famous-landmark-of-mount-rushmore-8079752"
+    },
+    {
+      "trait_type": "image_citation",
+      "value": "LVUMDT"
+    }
+  ]
+}

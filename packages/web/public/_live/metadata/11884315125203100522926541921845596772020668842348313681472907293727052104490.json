@@ -1,0 +1,19 @@
+{
+  "name": "Brandenburg Gate",
+  "description": "Proof I know where Brandenburg Gate is.",
+  "image": "https://where-in-the-world.standen.link/images/locations/brandenburg_gate.jpg",
+  "attributes": [
+    {
+      "trait_type": "name",
+      "value": "Brandenburg Gate"
+    },
+    {
+      "trait_type": "image_source",
+      "value": "https://www.pexels.com/photo/the-brandenburg-gate-in-berlin-germany-25053929"
+    },
+    {
+      "trait_type": "image_citation",
+      "value": "detait"
+    }
+  ]
+}
