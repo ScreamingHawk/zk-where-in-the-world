@@ -1,11 +1,16 @@
-import { Box } from "@0xsequence/design-system";
+import { Box, Text } from "@0xsequence/design-system";
 import { Address, Chain } from "viem";
 import ActiveChain from "./ActiveChain";
 import ChainSwitcher from "./ChainSwitcher";
-import VerifierStatus from "./VerifierStatus";
 
-const ChainInfo = (props: { chain: Chain; address: Address }) => {
-  const { chain } = props;
+type ChainInfoProps = {
+  chain: Chain;
+  address: Address;
+  message?: string;
+};
+
+const ChainInfo: React.FC<ChainInfoProps> = (props) => {
+  const { chain, message } = props;
 
   return (
     <Box marginBottom="8">
@@ -18,7 +23,13 @@ const ChainInfo = (props: { chain: Chain; address: Address }) => {
         <ActiveChain chain={chain} />
         <ChainSwitcher chain={chain} />
       </Box>
-      <VerifierStatus />
+      {message && message !== "" && (
+        <Box display="flex">
+          <Text variant="large" fontWeight="bold" color="text100">
+            {message}
+          </Text>
+        </Box>
+      )}
     </Box>
   );
 };
