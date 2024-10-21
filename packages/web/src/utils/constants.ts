@@ -1,7 +1,7 @@
 import { Chain, anvil, arbitrum, arbitrumSepolia } from "wagmi/chains";
 
 export const CHAINS = [anvil, arbitrumSepolia, arbitrum] as [Chain, ...Chain[]];
-export const DEFAULT_CHAIN = arbitrum;
+export const DEFAULT_CHAIN = arbitrumSepolia;
 
 export const VERIFIER_CONTRACT_ADDR = import.meta.env
   .VITE_VERIFIER_CONTRACT_ADDR;
