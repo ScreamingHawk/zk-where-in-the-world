@@ -4,7 +4,10 @@ import React from "react";
 import { useWriteContract } from "wagmi";
 import { LocationVerifierABI } from "../../utils/abis/LocationVerifier";
 import { proofCalldata, ProofData } from "../../utils/circuit";
-import { VERIFIER_CONTRACT_ADDR } from "../../utils/constants";
+import {
+  ETHERSCAN_BASE_URL,
+  VERIFIER_CONTRACT_ADDR,
+} from "../../utils/constants";
 import CardButton from "../CardButton";
 
 type SubmitProofProps = ProofData & {
@@ -45,7 +48,12 @@ const SubmitProof: React.FC<SubmitProofProps> = (props) => {
         />
       )}
       {error && <Text>Error: {JSON.stringify(error, bigIntReplacer, 2)}</Text>}
-      {txHash && <Text>Transaction hash: {txHash}</Text>}
+      {txHash && (
+        <Text>
+          Transaction hash:{" "}
+          <a href={`${ETHERSCAN_BASE_URL}/tx/${txHash}`}>{txHash}</a>
+        </Text>
+      )}
     </>
   );
 };

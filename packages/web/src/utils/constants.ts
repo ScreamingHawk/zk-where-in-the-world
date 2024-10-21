@@ -17,3 +17,5 @@ export const LOCATIONS = arrayify(import.meta.env.VITE_LOCATIONS);
 export const LOCATION_HASHES = arrayify(
   import.meta.env.VITE_LOCATION_HASHES,
 ) as `0x${string}`[];
+
+export const ETHERSCAN_BASE_URL = DEFAULT_CHAIN.id === (arbitrum as Chain).id ? "https://arbiscan.io" : "https://sepolia.arbiscan.io";
