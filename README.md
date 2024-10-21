@@ -16,13 +16,13 @@ sequenceDiagram
   participant B as Browser
   participant C as Contract
 
-  U->+B: Select location
-  B->B: Create nonce
-  B->B: Generate proof
-  B->+C: Submit proof
-  C->C: Validate proof
-  C->C: Store nonce hash
-  C-->U: Issue token
+  U->>+B: Select location
+  B->>B: Create nonce
+  B->>B: Generate proof
+  B->>+C: Submit proof
+  C->>C: Validate proof
+  C->>C: Store nonce hash
+  C-->>U: Issue token
   deactivate C
   deactivate B
 ```
